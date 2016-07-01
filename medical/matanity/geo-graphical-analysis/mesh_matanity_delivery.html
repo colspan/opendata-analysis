@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>最短の分娩を取り扱う産科病院への自動車による移動時間ヒートマップ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <div id="map" class="map"></div>
+  <div id="title-header">最短の分娩を取り扱う産科病院への自動車による移動時間ヒートマップ <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fcolspan.github.io%2Fopendata-analysis%2Fmedical%2Fmatanity%2Fgeo-graphical-analysis%2Fmesh_matanity_delivery.html&layout=button_count&size=small&mobile_iframe=true&appId=123030901113452&width=72&height=20" width="72" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+  <script>
+  var distanceHeatmapUrl = './map/matanity_delivery/{z}/{x}/{y}.png';
+  var distanceHeatmapAttrib = 'CC BY SA <a href="http://github.com/colspan/">Miyoshi</a>, CC BY <a href="http://www.pref.hokkaido.lg.jp/ss/jsk/opendata/opendata.htm">北海道</a> <a href="http://www.pref.hokkaido.lg.jp/hf/iyk/iry/iryoukikanmeibo.htm">医療機関名簿</a>';
+  var distanceHeatmapOption = {
+    attribution: distanceHeatmapAttrib,
+    opacity: 0.5,
+    maxNativeZoom: 10,
+    bounds : [[45.4,139.1], [41.23,146.2]]
+  };
+
+  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  var osmAttrib = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+  var osmOption = {attribution: osmAttrib};
+
+  var distanceHeatmap = L.tileLayer(distanceHeatmapUrl, distanceHeatmapOption);
+  var osmMap = L.tileLayer(osmUrl, osmOption);
+
+  var layers = [ osmMap, distanceHeatmap ];
+
+  var map = L.map('map',{
+          layers: layers,
+          zoom: 7,
+          minZoom: 4,
+          maxZoom: 18,
+          center:L.latLng(43.398,142.875)
+  });
+  </script>
+</body>
+</html>
+
+/*
+# 病院一覧
+ＪＡ北海道厚生連旭川厚生病院
+ＪＡ北海道厚生連網走厚生病院
+ＪＡ北海道厚生連遠軽厚生病院
+ＪＡ北海道厚生連帯広厚生病院
+ＮＴＴ東日本札幌病院
+旭川医科大学病院
+旭川赤十字病院
+岩見沢市立総合病院
+総合病院浦河赤十字病院
+王子総合病院
+北見赤十字病院
+総合病院釧路赤十字病院
+広域紋別病院
+札幌医科大学附属病院
+市立釧路総合病院
+市立札幌病院
+市立函館病院
+市立稚内病院
+砂川市立病院
+滝川市立病院
+町立中標津病院
+手稲渓仁会病院
+天使病院
+苫小牧市立病院
+名寄市立総合病院
+函館中央病院
+日鋼記念病院
+深川市立病院
+社会福祉法人北海道社会事業協会小樽病院
+社会福祉法人北海道社会事業協会帯広病院
+社会福祉法人北海道社会事業協会富良野病院
+北海道社会保険病院
+北海道大学病院
+北海道立江差病院
+北海道立子ども総合医療・療育センター
+八雲総合病院
+留萌市立病院
+慶愛病院
+公立芽室病院
+町立別海病院
+中村記念愛成病院
+市立旭川病院
+森産婦人科病院
+江別市立病院
+千歳市民病院
+製鉄記念室蘭病院
+函館五稜郭病院
+共愛会病院
+秋山記念病院
+伊達赤十字病院
+倶知安厚生病院
+札幌厚生病院
+札幌ﾏﾀﾆﾃｨ･ｳｨﾒﾝｽﾞﾎｽﾋﾟﾀﾙ
+札幌東豊病院
+勤医協札幌病院
+札幌徳州会病院
+白石産科婦人科病院
+JCHO札幌北辰病院
+KKR札幌医療センター
+自衛隊札幌病院
+五輪橋産婦人科小児科病院
+*/
