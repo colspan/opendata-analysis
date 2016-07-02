@@ -10,7 +10,7 @@
 <body>
   <div id="map" class="map"></div>
   <div id="title-header">最短の脳疾患を受け付ける病院への自動車による移動時間ヒートマップ <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fcolspan.github.io%2Fopendata-analysis%2Fmedical%2Fmatanity%2Fgeo-graphical-analysis%2Fmesh_matanity_delivery.html&layout=button_count&size=small&mobile_iframe=true&appId=123030901113452&width=72&height=20" width="72" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-  <script src="../../../../common/leaflet.js"></script>
+  <script src="../../../common/leaflet.js"></script>
   <script>
   var distanceHeatmapUrl = './map/brain_all/{z}/{x}/{y}.png';
   var distanceHeatmapAttrib = 'CC BY SA <a href="http://github.com/colspan/">Miyoshi</a>, CC BY <a href="http://www.pref.hokkaido.lg.jp/ss/jsk/opendata/opendata.htm">北海道</a> <a href="http://www.pref.hokkaido.lg.jp/hf/iyk/iry/iryoukikanmeibo.htm">医療機関名簿</a>';
@@ -38,5 +38,6 @@
           center:L.latLng(43.398,142.875)
   });
   </script>
+  <img src="mesh_brain_all.png" class="map_thumbnail">
 </body>
 </html>
