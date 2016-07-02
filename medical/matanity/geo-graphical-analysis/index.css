@@ -20,6 +20,7 @@ html {
     width: 320px;
     height: 480px;
     overflow-y: scroll;
+    z-index: 20;
 }
 
 #title-header {
