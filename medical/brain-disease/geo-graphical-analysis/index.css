@@ -20,7 +20,6 @@ html {
     width: 320px;
     height: 480px;
     overflow-y: scroll;
-    z-index: 20;
 }
 
 #title-header {
@@ -32,6 +31,7 @@ html {
   background-color:white;
   padding:2px;
   font-size: 12pt;
+  z-index: 20;
 }
 
 .map_thumbnail{
